@@ -1,4 +1,3 @@
-import DataLayer
 import SwiftUI
 
 struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
@@ -7,12 +6,6 @@ struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
-            .onAppear {
-                Task {
-                    let result = try await ExchangeRateService.defaultService.getExchangeRates(payload: ExchangeRatePayloadDto(currency: .USD))
-                    print(result)
-                }
-            }
     }
 }
 

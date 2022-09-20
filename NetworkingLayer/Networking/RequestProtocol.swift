@@ -19,7 +19,11 @@ public extension RequestProtocol {
     }
     
     var addAuthorizationToken: Bool {
-        true
+        false
+    }
+    
+    var authToken: String {
+        .empty
     }
     
     var params: [String: Any] {
@@ -53,10 +57,9 @@ public extension RequestProtocol {
             urlRequest.allHTTPHeaderFields = headers
         }
         
-        //Auth requests
-        /*if addAuthorizationToken {
+        if addAuthorizationToken {
             urlRequest.setValue(authToken, forHTTPHeaderField: "Authorization")
-        }*/
+        }
         
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         

@@ -1,3 +1,4 @@
+import DataLayer
 import SwiftUI
 
 protocol MainScreenViewModelProtocol: ObservableObject {}
@@ -9,5 +10,10 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
     init(navigation: MainScreenNavigationProtocol, repository: AppRepositoryProtocol) {
         self.navigation = navigation
         self.repository = repository
+        
+        Task {
+            let result = try await ExchangeRateService.defaultService.getExchangeRates(payload: ExchangeRatePayloadDto(currency: .USD))
+            print(result)
+        }
     }
 }

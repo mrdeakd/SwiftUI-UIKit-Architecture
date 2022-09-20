@@ -15,31 +15,12 @@
 		00ABF90F28A42668002F0036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00ABF90E28A42668002F0036 /* Assets.xcassets */; };
 		00FCF75928CCC6AE00C0CE52 /* BaseDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCF75828CCC6AE00C0CE52 /* BaseDependency.swift */; };
 		00FCF74E28CCC2EB00C0CE52 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCF74D28CCC2EB00C0CE52 /* Coordinator.swift */; };
-		00ABF97528A428F0002F0036 /* DataLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00ABF97328A428F0002F0036 /* DataLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		00ABF97428A428F0002F0036 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ABF97328A428F0002F0036 /* DataLayer.framework */; };
 		00FCF75C28CCC78500C0CE52 /* MainScreenNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCF75B28CCC78500C0CE52 /* MainScreenNavigation.swift */; };
 		00FCF76028CCC79400C0CE52 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCF75F28CCC79400C0CE52 /* MainScreenView.swift */; };
 		00FCF75E28CCC78D00C0CE52 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCF75D28CCC78D00C0CE52 /* MainScreenViewModel.swift */; };
 		00ABF91228A42668002F0036 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00ABF91128A42668002F0036 /* Preview Assets.xcassets */; };
 		00FCF74928CCC1F900C0CE52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FCF74828CCC1F900C0CE52 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		00ABF96E28A428A9002F0036 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 00ABF96928A428A9002F0036 /* DataLayer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 00ABF94F28A427FC002F0036;
-			remoteInfo = DataLayer;
-		};
-		00ABF97028A428A9002F0036 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 00ABF96928A428A9002F0036 /* DataLayer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 00ABF95928A427FD002F0036;
-			remoteInfo = DataLayerTests;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		00ABF97628A428F0002F0036 /* Embed Frameworks */ = {
@@ -48,7 +29,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				00ABF97528A428F0002F0036 /* DataLayer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,8 +44,6 @@
 		00ABF90E28A42668002F0036 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00FCF75828CCC6AE00C0CE52 /* BaseDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDependency.swift; sourceTree = "<group>"; };
 		00FCF74D28CCC2EB00C0CE52 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		00ABF97328A428F0002F0036 /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		00ABF96928A428A9002F0036 /* DataLayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DataLayer.xcodeproj; path = ../../../DataLayer/DataLayer.xcodeproj; sourceTree = "<group>"; };
 		00ABF90728A42662002F0036 /* ExchangeRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00FCF76328CCD95A00C0CE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		00FCF75B28CCC78500C0CE52 /* MainScreenNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenNavigation.swift; sourceTree = "<group>"; };
@@ -80,13 +58,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00ABF97428A428F0002F0036 /* DataLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001D14D428D9FD5300C04142 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				00FCF75A28CCC77800C0CE52 /* MainScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		00ABF8FE28A42662002F0036 = {
 			isa = PBXGroup;
 			children = (
@@ -110,9 +95,9 @@
 				00FCF74A28CCC22300C0CE52 /* Coordinator */,
 				00FCF75028CCC45A00C0CE52 /* Dependency */,
 				00FCF75128CCC46300C0CE52 /* Factory */,
-				00FCF75A28CCC77800C0CE52 /* MainScreen */,
 				00ABF91028A42668002F0036 /* Preview Content */,
 				00FCF74F28CCC45200C0CE52 /* Repository */,
+				001D14D428D9FD5300C04142 /* Screens */,
 				00FCF74628CCC1B000C0CE52 /* AppDelegate.swift */,
 				00ABF90E28A42668002F0036 /* Assets.xcassets */,
 				00FCF76328CCD95A00C0CE52 /* Info.plist */,
@@ -124,25 +109,14 @@
 		00ABF91028A42668002F0036 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				00ABF96928A428A9002F0036 /* DataLayer.xcodeproj */,
 				00ABF91128A42668002F0036 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		00ABF96A28A428A9002F0036 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				00ABF96F28A428A9002F0036 /* DataLayer.framework */,
-				00ABF97128A428A9002F0036 /* DataLayerTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		00ABF97228A428F0002F0036 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				00ABF97328A428F0002F0036 /* DataLayer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,35 +212,12 @@
 			mainGroup = 00ABF8FE28A42662002F0036;
 			productRefGroup = 00ABF90828A42662002F0036 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 00ABF96A28A428A9002F0036 /* Products */;
-					ProjectRef = 00ABF96928A428A9002F0036 /* DataLayer.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				00ABF90628A42662002F0036 /* ExchangeRate */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		00ABF96F28A428A9002F0036 /* DataLayer.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DataLayer.framework;
-			remoteRef = 00ABF96E28A428A9002F0036 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		00ABF97128A428A9002F0036 /* DataLayerTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = DataLayerTests.xctest;
-			remoteRef = 00ABF97028A428A9002F0036 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00ABF90528A42662002F0036 /* Resources */ = {
