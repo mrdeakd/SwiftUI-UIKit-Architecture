@@ -12,8 +12,6 @@ struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     inputTextField
-                        .frame(height: 144)
-                        .padding(.bottom)
                     ScrollView(.horizontal, showsIndicators: false) {
                         ScrollViewReader { value in
                             HStack {
@@ -22,10 +20,8 @@ struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
                                 }
                                 .id(firstItemID)
                                 .onChange(of: viewModel.exchangeRate) { _ in
-                                    if !viewModel.exchangeRate.isEmpty {
-                                        withAnimation {
-                                            value.scrollTo(firstItemID)
-                                        }
+                                    withAnimation {
+                                        value.scrollTo(firstItemID)
                                     }
                                 }
                             }
@@ -89,6 +85,8 @@ struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
             }
             .padding(.horizontal)
         }
+        .frame(height: 144)
+        .padding(.bottom)
     }
 }
 
