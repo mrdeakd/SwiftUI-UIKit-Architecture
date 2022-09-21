@@ -1,3 +1,5 @@
+import Utils
+
 public protocol RequestProtocol {
     associatedtype ApiResponse: Response
 
