@@ -1,7 +1,19 @@
 import SwiftUI
 
-extension Color {
-    public static var appBackgroundColor: Color {
-        Color(cgColor: CGColor(red: 48/256, green: 195/256, blue: 232/256, alpha: 1))
-    }
+private class LocalColor {}
+
+public extension Color {
+    static let lightGray = Color(
+        UIColor(
+            named: "lightGray",
+            in: Bundle(for: LocalColor.self),
+            compatibleWith: nil
+        ) ?? .white
+    )
+    static let darkGray = Color(
+        UIColor(
+            named: "darkGray",
+            in: Bundle(for: LocalColor.self),
+            compatibleWith: nil
+        ) ?? .white)
 }

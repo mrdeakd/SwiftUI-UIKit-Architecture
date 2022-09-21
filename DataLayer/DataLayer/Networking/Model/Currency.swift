@@ -1,8 +1,8 @@
 import Foundation
 
 public enum Currency: Codable {
-    case EUR, USD, GBP, HUF, CHF, CAD
-    
+    case EUR, USD, GBP, HUF, CHF, CAD, Unknown
+
     public init(from string: String) {
         switch string.uppercased() {
         case "EUR":
@@ -18,12 +18,16 @@ public enum Currency: Codable {
         case "CAD":
             self = .CAD
         default:
-            self = .HUF
+            self = .Unknown
         }
     }
 }
 
 public extension Currency {
+    static var allCases: [Currency] {
+        [.EUR, .USD, .GBP, .HUF, .CHF, .CAD]
+    }
+
     var name: String {
         switch self {
         case .EUR:
@@ -38,6 +42,8 @@ public extension Currency {
             return "CHF"
         case .CAD:
             return "CAD"
+        case .Unknown:
+            return "Not a valid Currency"
         }
     }
 }

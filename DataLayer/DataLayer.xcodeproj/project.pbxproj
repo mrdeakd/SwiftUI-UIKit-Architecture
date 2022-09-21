@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0027056928DB74A700FFCBDC /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056828DB74A700FFCBDC /* Utils.framework */; };
-		0027056A28DB74A700FFCBDC /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056828DB74A700FFCBDC /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		00ABF97E28A42AC5002F0036 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF97D28A42AC5002F0036 /* Currency.swift */; };
 		00ABF95428A427FC002F0036 /* DataLayer.docc in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF95328A427FC002F0036 /* DataLayer.docc */; };
 		00ABF95A28A427FD002F0036 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ABF94F28A427FC002F0036 /* DataLayer.framework */; };
-		00ABF95F28A427FD002F0036 /* DataLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF95E28A427FD002F0036 /* DataLayerTests.swift */; };
 		00ABF96028A427FD002F0036 /* DataLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 00ABF95228A427FC002F0036 /* DataLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00ABF97C28A429E9002F0036 /* ExchangeRateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF97B28A429E9002F0036 /* ExchangeRateRequest.swift */; };
-		00ABF97E28A42AC5002F0036 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF97D28A42AC5002F0036 /* Currency.swift */; };
+		00ABF95F28A427FD002F0036 /* DataLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF95E28A427FD002F0036 /* DataLayerTests.swift */; };
 		00ABF98928A42E52002F0036 /* ExchangeRateListDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF98828A42E52002F0036 /* ExchangeRateListDto.swift */; };
+		00ABF97C28A429E9002F0036 /* ExchangeRateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF97B28A429E9002F0036 /* ExchangeRateRequest.swift */; };
 		00ABF99128A43003002F0036 /* ExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF99028A43003002F0036 /* ExchangeRateService.swift */; };
-		00ABF99328A4303D002F0036 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF99228A4303D002F0036 /* ServiceProtocol.swift */; };
-		00ABFA1628A4437A002F0036 /* NetworkingLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ABFA1528A4437A002F0036 /* NetworkingLayer.framework */; };
 		00ABFA1728A4437A002F0036 /* NetworkingLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00ABFA1528A4437A002F0036 /* NetworkingLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		00ABFA1628A4437A002F0036 /* NetworkingLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ABFA1528A4437A002F0036 /* NetworkingLayer.framework */; };
+		00ABF99328A4303D002F0036 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF99228A4303D002F0036 /* ServiceProtocol.swift */; };
+		0027056A28DB74A700FFCBDC /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056828DB74A700FFCBDC /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0027056928DB74A700FFCBDC /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056828DB74A700FFCBDC /* Utils.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0027056A28DB74A700FFCBDC /* Utils.framework in Embed Frameworks */,
 				00ABFA1728A4437A002F0036 /* NetworkingLayer.framework in Embed Frameworks */,
+				0027056A28DB74A700FFCBDC /* Utils.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,18 +48,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0027056828DB74A700FFCBDC /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00ABF97D28A42AC5002F0036 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		00ABF95328A427FC002F0036 /* DataLayer.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DataLayer.docc; sourceTree = "<group>"; };
 		00ABF94F28A427FC002F0036 /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ABF95228A427FC002F0036 /* DataLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataLayer.h; sourceTree = "<group>"; };
-		00ABF95328A427FC002F0036 /* DataLayer.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DataLayer.docc; sourceTree = "<group>"; };
-		00ABF95928A427FD002F0036 /* DataLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ABF95E28A427FD002F0036 /* DataLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayerTests.swift; sourceTree = "<group>"; };
-		00ABF97B28A429E9002F0036 /* ExchangeRateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateRequest.swift; sourceTree = "<group>"; };
-		00ABF97D28A42AC5002F0036 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		00ABF95928A427FD002F0036 /* DataLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ABF98828A42E52002F0036 /* ExchangeRateListDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateListDto.swift; sourceTree = "<group>"; };
+		00ABF97B28A429E9002F0036 /* ExchangeRateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateRequest.swift; sourceTree = "<group>"; };
 		00ABF99028A43003002F0036 /* ExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateService.swift; sourceTree = "<group>"; };
-		00ABF99228A4303D002F0036 /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
 		00ABFA1528A4437A002F0036 /* NetworkingLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkingLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00ABF99228A4303D002F0036 /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		0027056828DB74A700FFCBDC /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0027056928DB74A700FFCBDC /* Utils.framework in Frameworks */,
 				00ABFA1628A4437A002F0036 /* NetworkingLayer.framework in Frameworks */,
+				0027056928DB74A700FFCBDC /* Utils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +151,8 @@
 		00ABFA1428A4437A002F0036 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0027056828DB74A700FFCBDC /* Utils.framework */,
 				00ABFA1528A4437A002F0036 /* NetworkingLayer.framework */,
+				0027056828DB74A700FFCBDC /* Utils.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

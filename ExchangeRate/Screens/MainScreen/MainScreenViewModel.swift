@@ -24,8 +24,31 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
     
     func getExchangeRateForSelectedCurrency() async throws {
         let result = try await ExchangeRateService.defaultService.getExchangeRates(payload: ExchangeRatePayloadDto(currency: Currency(from: selectedCurrency)))
+
+        let filterKnownAndSelectedCurrency = filterKnownAndSelectedCurrency(items: result.rates)
+        
+        let inverseLessThanZeroValue = inverseLessThanZeroValue(items: filterKnownAndSelectedCurrency)
+
         DispatchQueue.main.async {
-            self.exchangeRate = result.rates
+            self.exchangeRate = inverseLessThanZeroValue
         }
+    }
+    
+    func filterKnownAndSelectedCurrency(items: [String: Double]) -> [String: Double] {
+        items.filter {
+            Currency.allCases.contains(Currency(from: $0.key)) &&
+            $0.key.uppercased() != selectedCurrency.uppercased()
+        }
+    }
+    
+    func inverseLessThanZeroValue(items: [String: Double]) -> [String: Double] {
+        Dictionary(
+            uniqueKeysWithValues: items.map { key, value in
+                if value < 1 {
+                    return (key, 1 / value)
+                } else {
+                    return (key, value)
+                }
+            })
     }
 }
