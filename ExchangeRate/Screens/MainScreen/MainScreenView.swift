@@ -3,7 +3,10 @@ import Utils
 
 struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
     @StateObject var viewModel: ViewModel
-    @Namespace var firstItemID
+    
+    let itemSize: CGFloat = 126
+    let spaceBetweenItems: CGFloat = 16
+    let itemsToShow: CGFloat = 3
     
     var body: some View {
         NavigationView {
@@ -14,19 +17,30 @@ struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
                     inputTextField
                     ScrollView(.horizontal, showsIndicators: false) {
                         ScrollViewReader { value in
-                            HStack {
+                            HStack(spacing: 24) {
                                 ForEach(viewModel.exchangeRate.sorted(by: >), id: \.key) { key, value in
                                     exchangeRateItem(key, value)
                                 }
-                                .id(firstItemID)
-                                .onChange(of: viewModel.exchangeRate) { _ in
-                                    withAnimation {
-                                        value.scrollTo(firstItemID)
-                                    }
-                                }
                             }
+                            .padding(.trailing, (
+                                UIScreen.main.bounds.size.width
+                                - ((itemsToShow - 1) * spaceBetweenItems)
+                                - ((itemsToShow - 1) * itemSize)
+                                - (itemSize / 2)
+                                )
+                            )
+                            .padding(.leading, 12)
                         }
                     }
+                    .padding(.horizontal)
+                    .background(Color.lightGray)
+                    .cornerRadius(20)
+                    .offset(x: (
+                        UIScreen.main.bounds.size.width
+                        - ((itemsToShow - 1) * spaceBetweenItems)
+                        - ((itemsToShow - 1) * itemSize)
+                        - (itemSize / 2))
+                    )
                     Spacer()
                 }
             }
@@ -37,20 +51,24 @@ struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
     func exchangeRateItem(_ key: String, _ value: Double) -> some View {
         ZStack {
             Color.white
-                .cornerRadius(12)
+                .cornerRadius(20)
             VStack(alignment: .center) {
                 Text(key)
                     .font(.largeTitle)
-                    .foregroundColor(.darkGray)
+                    .foregroundColor(.lightBrown)
                 Text(value.twoDecimalPoints)
                     .font(.system(size: 18, weight: .bold, design: .serif))
-                    .foregroundColor(.darkGray)
+                    .foregroundColor(.lightBrown)
             }
             .padding(.vertical)
         }
         .transition(.move(edge: .leading))
-        .frame(width: 126, height: 126)
-        .padding(.leading)
+        .frame(width: itemSize, height: itemSize)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.mediumGray, lineWidth: 1)
+        )
+        .padding(.vertical, spaceBetweenItems)
     }
     
     var inputTextField: some View {
@@ -61,10 +79,10 @@ struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
             VStack(alignment: .leading) {
                 Text("Welcome back,")
                     .font(.largeTitle)
-                    .foregroundColor(.darkGray)
+                    .foregroundColor(.lightBrown)
                 Text("David").font(.title2)
                     .font(.subheadline)
-                    .foregroundColor(.darkGray)
+                    .foregroundColor(.lightBrown)
                     .fontWeight(.thin)
                 HStack {
                     Image(systemName: "magnifyingglass")
@@ -73,7 +91,7 @@ struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
                                 try await viewModel.getExchangeRateForSelectedCurrency()
                             }
                         }
-                    TextField("Search", text: $viewModel.selectedCurrency)
+                    TextField("Try to find...", text: $viewModel.selectedCurrency)
                         .textInputAutocapitalization(.characters)
                         .onSubmit {
                             Task {
