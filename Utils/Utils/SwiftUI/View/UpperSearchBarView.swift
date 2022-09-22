@@ -37,6 +37,7 @@ public struct UpperSearchBarView: View {
                 .cornerRadius(12)
                 .edgesIgnoringSafeArea(.all)
             VStack(alignment: .leading) {
+                Spacer()
                 Text(title)
                     .font(.largeTitle)
                     .foregroundColor(.lightBrown)
@@ -53,9 +54,8 @@ public struct UpperSearchBarView: View {
                 }
                 .textFieldStyle(.roundedBorder)
             }
-            .padding(.horizontal, paddingSize)
+            .padding(paddingSize)
         }
-        .frame(height: 144)
         .padding(.bottom, paddingSize)
     }
 }

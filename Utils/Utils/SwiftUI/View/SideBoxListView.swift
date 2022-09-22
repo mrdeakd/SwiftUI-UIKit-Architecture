@@ -31,6 +31,7 @@ public struct SideBoxListView: View {
         .background(Color.lightGray)
         .cornerRadius(20)
         .offset(x: calculatedPadding)
+        .padding(.vertical)
     }
     
     var calculatedPadding: CGFloat {
