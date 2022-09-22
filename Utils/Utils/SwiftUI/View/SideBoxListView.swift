@@ -41,3 +41,18 @@ public struct SideBoxListView: View {
         - (itemSize / 2) - paddingSize
     }
 }
+
+struct SideBoxListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.black
+            SideBoxListView(
+                items: ["Item1": 1, "Item2": 2, "Item3": 3],
+                paddingSize: 16,
+                itemSize: 126,
+                spaceBetweenItems: 16,
+                itemsToShow: 3
+            )
+        }
+    }
+}

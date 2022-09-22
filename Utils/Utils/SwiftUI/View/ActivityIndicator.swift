@@ -31,3 +31,10 @@ public struct ActivityIndicator: View {
         }
     }
 }
+
+struct ActivityIndicator_Previews: PreviewProvider {
+    static var previews: some View {
+        ActivityIndicator()
+            .previewLayout(PreviewLayout.sizeThatFits)
+    }
+}
