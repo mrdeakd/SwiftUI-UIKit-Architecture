@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0027058628DB857100FFCBDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0027058528DB857100FFCBDC /* Assets.xcassets */; };
+		001D8A4F28DC4E8300CFE52C /* BoxItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D8A4E28DC4E8300CFE52C /* BoxItemView.swift */; };
 		0027058828DB85E700FFCBDC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027058728DB85E700FFCBDC /* Color.swift */; };
 		0027058128DB786E00FFCBDC /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027058028DB786E00FFCBDC /* Double.swift */; };
 		0027058328DB787600FFCBDC /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027058228DB787600FFCBDC /* Encodable.swift */; };
 		0027057F28DB786400FFCBDC /* LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027057E28DB786400FFCBDC /* LinearGradient.swift */; };
+		001D8A5128DC4FB500CFE52C /* SideBoxListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D8A5028DC4FB500CFE52C /* SideBoxListView.swift */; };
 		0027057D28DB784200FFCBDC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027057C28DB784200FFCBDC /* String.swift */; };
+		001D8A5328DC511900CFE52C /* UpperSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D8A5228DC511900CFE52C /* UpperSearchBarView.swift */; };
 		0027054E28DB746500FFCBDC /* Utils.docc in Sources */ = {isa = PBXBuildFile; fileRef = 0027054D28DB746500FFCBDC /* Utils.docc */; };
 		0027055428DB746500FFCBDC /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0027054928DB746500FFCBDC /* Utils.framework */; };
 		0027055A28DB746500FFCBDC /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0027054C28DB746500FFCBDC /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,11 +34,14 @@
 
 /* Begin PBXFileReference section */
 		0027058528DB857100FFCBDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		001D8A4E28DC4E8300CFE52C /* BoxItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxItemView.swift; sourceTree = "<group>"; };
 		0027058728DB85E700FFCBDC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0027058028DB786E00FFCBDC /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		0027058228DB787600FFCBDC /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		0027057E28DB786400FFCBDC /* LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradient.swift; sourceTree = "<group>"; };
+		001D8A5028DC4FB500CFE52C /* SideBoxListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBoxListView.swift; sourceTree = "<group>"; };
 		0027057C28DB784200FFCBDC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		001D8A5228DC511900CFE52C /* UpperSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperSearchBarView.swift; sourceTree = "<group>"; };
 		0027054D28DB746500FFCBDC /* Utils.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Utils.docc; sourceTree = "<group>"; };
 		0027054928DB746500FFCBDC /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0027054C28DB746500FFCBDC /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -62,6 +68,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001D8A4C28DC4E6200CFE52C /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				001D8A4D28DC4E6A00CFE52C /* View */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		001D8A4D28DC4E6A00CFE52C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				001D8A4E28DC4E8300CFE52C /* BoxItemView.swift */,
+				001D8A5028DC4FB500CFE52C /* SideBoxListView.swift */,
+				001D8A5228DC511900CFE52C /* UpperSearchBarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0027053F28DB746500FFCBDC = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				0027058428DB788400FFCBDC /* Extension */,
+				001D8A4C28DC4E6200CFE52C /* SwiftUI */,
 				0027058528DB857100FFCBDC /* Assets.xcassets */,
 				0027054D28DB746500FFCBDC /* Utils.docc */,
 				0027054C28DB746500FFCBDC /* Utils.h */,
@@ -221,11 +246,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				001D8A4F28DC4E8300CFE52C /* BoxItemView.swift in Sources */,
 				0027058828DB85E700FFCBDC /* Color.swift in Sources */,
 				0027058128DB786E00FFCBDC /* Double.swift in Sources */,
 				0027058328DB787600FFCBDC /* Encodable.swift in Sources */,
 				0027057F28DB786400FFCBDC /* LinearGradient.swift in Sources */,
+				001D8A5128DC4FB500CFE52C /* SideBoxListView.swift in Sources */,
 				0027057D28DB784200FFCBDC /* String.swift in Sources */,
+				001D8A5328DC511900CFE52C /* UpperSearchBarView.swift in Sources */,
 				0027054E28DB746500FFCBDC /* Utils.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
