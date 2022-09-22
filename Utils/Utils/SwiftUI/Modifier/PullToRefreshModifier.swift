@@ -2,20 +2,23 @@ import SwiftUI
 
 public struct PullToRefreshModifier: ViewModifier {
     @State private var dragAmount = CGFloat.zero
-    @State private var maximumOffset: CGFloat = 128
+    @State private var maximumOffset: CGFloat = 84
     
     private let baseHeight: CGFloat
+    private let backgroundColor: Color
     private let pullAction: (() -> Void)
     
-    public init(baseHeight: CGFloat, pullAction: @escaping (() -> Void)) {
+    public init(baseHeight: CGFloat, backgroundColor: Color = .white, pullAction: @escaping (() -> Void)) {
         self.baseHeight = baseHeight
         self.pullAction = pullAction
+        self.backgroundColor = backgroundColor
     }
 
     public func body(content: Content) -> some View {
         ZStack {
-            Color.white
-                .edgesIgnoringSafeArea(.all)
+            backgroundColor
+                .cornerRadius(20)
+                .edgesIgnoringSafeArea(.top)
             VStack {
                 if dragAmount > .zero {
                     HStack {

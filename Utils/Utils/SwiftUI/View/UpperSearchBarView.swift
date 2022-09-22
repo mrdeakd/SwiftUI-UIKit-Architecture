@@ -37,7 +37,6 @@ public struct UpperSearchBarView: View {
                 .cornerRadius(12)
                 .edgesIgnoringSafeArea(.all)
             VStack(alignment: .leading) {
-                Spacer()
                 Text(title)
                     .font(.largeTitle)
                     .foregroundColor(.lightBrown)
@@ -53,9 +52,28 @@ public struct UpperSearchBarView: View {
                         .onSubmit { Task { try await onAsyncSubmit?() } }
                 }
                 .textFieldStyle(.roundedBorder)
+                Spacer()
             }
             .padding(paddingSize)
         }
         .padding(.bottom, paddingSize)
+    }
+}
+
+struct UpperSearchBarView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.black
+            UpperSearchBarView(
+                title: "Title",
+                subText: "SubText",
+                image: "magnifyingglass",
+                placeholder: "Placeholder",
+                paddingSize: 16,
+                text: .constant("Search text"),
+                onAsyncSearch: nil,
+                onAsyncSubmit: nil
+            )
+        }
     }
 }

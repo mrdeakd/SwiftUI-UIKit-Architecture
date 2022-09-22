@@ -16,7 +16,7 @@ public struct BoxItemView: View {
     public var body: some View {
         ZStack {
             Color.white
-                .cornerRadius(20)
+                .cornerRadius(12)
             VStack(alignment: .center) {
                 Text(title)
                     .font(.largeTitle)
@@ -29,10 +29,20 @@ public struct BoxItemView: View {
         }
         .transition(.move(edge: .leading))
         .frame(width: itemSize, height: itemSize)
-        .overlay(
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.mediumGray, lineWidth: 1)
-        )
         .padding(.vertical, spaceBetweenItems)
+    }
+}
+
+struct BoxItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.black
+            BoxItemView(
+                title: "Title",
+                subText: "SubText",
+                itemSize: 126,
+                spaceBetweenItems: 16
+            )
+        }
     }
 }
