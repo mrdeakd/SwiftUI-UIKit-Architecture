@@ -11,7 +11,6 @@
 		008EBC6D28D8F609004775EA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6C28D8F609004775EA /* APIManager.swift */; };
 		008EBC6A28D8F5E5004775EA /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6928D8F5E5004775EA /* APIManagerProtocol.swift */; };
 		008EBC7428D8F9AB004775EA /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC7328D8F9AB004775EA /* EmptyResponse.swift */; };
-		008EBC7628D8FCC4004775EA /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC7528D8FCC4004775EA /* Encodable.swift */; };
 		008EBC6828D8F53B004775EA /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6728D8F53B004775EA /* NetworkError.swift */; };
 		00ABF9BA28A44089002F0036 /* NetworkingLayer.docc in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF9B928A44089002F0036 /* NetworkingLayer.docc */; };
 		00ABF9C028A44089002F0036 /* NetworkingLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ABF9B528A44089002F0036 /* NetworkingLayer.framework */; };
@@ -21,7 +20,8 @@
 		008EBC6328D8EE2A004775EA /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6228D8EE2A004775EA /* RequestProtocol.swift */; };
 		008EBC6128D8EDDA004775EA /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6028D8EDDA004775EA /* RequestType.swift */; };
 		008EBC7128D8F94E004775EA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC7028D8F94E004775EA /* Response.swift */; };
-		001D14D328D9FC3600C04142 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D14D228D9FC3600C04142 /* String.swift */; };
+		0027056E28DB74B000FFCBDC /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056C28DB74B000FFCBDC /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0027056D28DB74B000FFCBDC /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056C28DB74B000FFCBDC /* Utils.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +34,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0027056F28DB74B100FFCBDC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0027056E28DB74B000FFCBDC /* Utils.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		008EBC6428D8EE9A004775EA /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		008EBC6C28D8F609004775EA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		008EBC6928D8F5E5004775EA /* APIManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerProtocol.swift; sourceTree = "<group>"; };
 		008EBC7328D8F9AB004775EA /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
-		008EBC7528D8FCC4004775EA /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		008EBC6728D8F53B004775EA /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		00ABF9B928A44089002F0036 /* NetworkingLayer.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NetworkingLayer.docc; sourceTree = "<group>"; };
 		00ABF9B528A44089002F0036 /* NetworkingLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkingLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +63,7 @@
 		008EBC6228D8EE2A004775EA /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		008EBC6028D8EDDA004775EA /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		008EBC7028D8F94E004775EA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		001D14D228D9FC3600C04142 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		0027056C28DB74B000FFCBDC /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0027056D28DB74B000FFCBDC /* Utils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,13 +86,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		001D14D128D9FC2800C04142 /* Extension */ = {
+		0027056B28DB74B000FFCBDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				008EBC7528D8FCC4004775EA /* Encodable.swift */,
-				001D14D228D9FC3600C04142 /* String.swift */,
+				0027056C28DB74B000FFCBDC /* Utils.framework */,
 			);
-			path = Extension;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		008EBC6628D8F52D004775EA /* Error */ = {
@@ -111,6 +124,7 @@
 		00ABF9AB28A44089002F0036 = {
 			isa = PBXGroup;
 			children = (
+				0027056B28DB74B000FFCBDC /* Frameworks */,
 				00ABF9DC28A441E9002F0036 /* Networking */,
 				00ABF9B728A44089002F0036 /* NetworkingLayer */,
 				00ABF9C328A44089002F0036 /* NetworkingLayerTests */,
@@ -149,7 +163,6 @@
 			children = (
 				008EBC6B28D8F5F7004775EA /* APIManager */,
 				008EBC6628D8F52D004775EA /* Error */,
-				001D14D128D9FC2800C04142 /* Extension */,
 				008EBC7228D8F99B004775EA /* Response */,
 				008EBC6428D8EE9A004775EA /* APIConstants.swift */,
 				008EBC6228D8EE2A004775EA /* RequestProtocol.swift */,
@@ -180,6 +193,7 @@
 				00ABF9B128A44089002F0036 /* Sources */,
 				00ABF9B228A44089002F0036 /* Frameworks */,
 				00ABF9B328A44089002F0036 /* Resources */,
+				0027056F28DB74B100FFCBDC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,14 +289,12 @@
 				008EBC6D28D8F609004775EA /* APIManager.swift in Sources */,
 				008EBC6A28D8F5E5004775EA /* APIManagerProtocol.swift in Sources */,
 				008EBC7428D8F9AB004775EA /* EmptyResponse.swift in Sources */,
-				008EBC7628D8FCC4004775EA /* Encodable.swift in Sources */,
 				008EBC6828D8F53B004775EA /* NetworkError.swift in Sources */,
 				00ABF9BA28A44089002F0036 /* NetworkingLayer.docc in Sources */,
 				008EBC6F28D8F685004775EA /* RequestManager.swift in Sources */,
 				008EBC6328D8EE2A004775EA /* RequestProtocol.swift in Sources */,
 				008EBC6128D8EDDA004775EA /* RequestType.swift in Sources */,
 				008EBC7128D8F94E004775EA /* Response.swift in Sources */,
-				001D14D328D9FC3600C04142 /* String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -413,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -438,6 +450,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +479,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

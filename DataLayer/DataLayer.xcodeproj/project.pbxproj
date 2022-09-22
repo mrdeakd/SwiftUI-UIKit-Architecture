@@ -18,6 +18,8 @@
 		00ABFA1728A4437A002F0036 /* NetworkingLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00ABFA1528A4437A002F0036 /* NetworkingLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		00ABFA1628A4437A002F0036 /* NetworkingLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ABFA1528A4437A002F0036 /* NetworkingLayer.framework */; };
 		00ABF99328A4303D002F0036 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF99228A4303D002F0036 /* ServiceProtocol.swift */; };
+		0027056A28DB74A700FFCBDC /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056828DB74A700FFCBDC /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0027056928DB74A700FFCBDC /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056828DB74A700FFCBDC /* Utils.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				00ABFA1728A4437A002F0036 /* NetworkingLayer.framework in Embed Frameworks */,
+				0027056A28DB74A700FFCBDC /* Utils.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +59,7 @@
 		00ABF99028A43003002F0036 /* ExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateService.swift; sourceTree = "<group>"; };
 		00ABFA1528A4437A002F0036 /* NetworkingLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkingLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ABF99228A4303D002F0036 /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		0027056828DB74A700FFCBDC /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00ABFA1628A4437A002F0036 /* NetworkingLayer.framework in Frameworks */,
+				0027056928DB74A700FFCBDC /* Utils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				00ABFA1528A4437A002F0036 /* NetworkingLayer.framework */,
+				0027056828DB74A700FFCBDC /* Utils.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -344,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -401,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

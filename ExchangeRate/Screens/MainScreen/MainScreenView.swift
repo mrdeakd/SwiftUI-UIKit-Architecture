@@ -1,11 +1,30 @@
 import SwiftUI
+import Utils
 
 struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
     @StateObject var viewModel: ViewModel
 
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            ZStack {
+                LinearGradient.appBackgroundGradient
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    UpperSearchBarView(
+                        title: "Welcome back,",
+                        subText: "David",
+                        image: "magnifyingglass",
+                        placeholder: "Try to find...",
+                        paddingSize: 12,
+                        text: $viewModel.selectedCurrency,
+                        onAsyncSearch: viewModel.getExchangeRateForSelectedCurrency,
+                        onAsyncSubmit: viewModel.getExchangeRateForSelectedCurrency)
+                    SideBoxListView(items: viewModel.exchangeRate)
+                    Spacer()
+                }
+            }
+        }
+        .navigationBarHidden(true)
     }
 }
 
@@ -14,3 +33,7 @@ struct MainScreenView_Previews: PreviewProvider {
         MainScreenView(viewModel: MainScreenViewModel(navigation: MainScreenNavigation(), repository: AppRepository()))
     }
 }
+
+
+
+

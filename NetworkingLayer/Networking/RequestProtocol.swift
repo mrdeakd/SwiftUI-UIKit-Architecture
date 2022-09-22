@@ -1,3 +1,5 @@
+import Utils
+
 public protocol RequestProtocol {
     associatedtype ApiResponse: Response
 
@@ -15,7 +17,7 @@ public protocol RequestProtocol {
 
 public extension RequestProtocol {
     var host: String {
-        APIConstants.host
+        APIConstants.hostWithApiKey
     }
     
     var addAuthorizationToken: Bool {
