@@ -46,4 +46,23 @@ public extension Currency {
             return "Not a valid Currency"
         }
     }
+    
+    var imageName: String {
+        switch self {
+        case .EUR:
+            return "eur"
+        case .USD:
+            return "usd"
+        case .GBP:
+            return "gbp"
+        case .HUF:
+            return "huf"
+        case .CHF:
+            return "chf"
+        case .CAD:
+            return "cad"
+        case .Unknown:
+            return "Not a valid Currency"
+        }
+    }
 }

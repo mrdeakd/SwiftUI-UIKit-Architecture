@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct SideBoxListView: View {
+public struct SideBoxDictionaryView: View {
     let items: [String: Double]
     let paddingSize: CGFloat
     let itemSize: CGFloat
@@ -18,10 +18,11 @@ public struct SideBoxListView: View {
     public var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             ScrollViewReader { value in
-                HStack(spacing: 24) {
+                HStack(spacing: spaceBetweenItems) {
                     ForEach(items.sorted(by: >), id: \.key) { key, value in
-                        BoxItemView(title: key, subText: value.twoDecimalPoints, itemSize: itemSize, spaceBetweenItems: spaceBetweenItems)
+                        BoxItemView(title: key, subText: value.twoDecimalPoints, itemSize: itemSize)
                     }
+                    .padding(.vertical)
                 }
                 .padding(.trailing, calculatedPadding)
                 .padding(.leading, paddingSize)
@@ -42,11 +43,11 @@ public struct SideBoxListView: View {
     }
 }
 
-struct SideBoxListView_Previews: PreviewProvider {
+struct SideBoxDictionaryView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            SideBoxListView(
+            SideBoxDictionaryView(
                 items: ["Item1": 1, "Item2": 2, "Item3": 3],
                 paddingSize: 16,
                 itemSize: 126,

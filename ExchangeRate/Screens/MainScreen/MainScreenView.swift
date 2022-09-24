@@ -24,11 +24,16 @@ struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
                         baseHeight: 144,
                         pullAction: { Task { try await viewModel.getExchangeRateForSelectedCurrency() } }
                     )
-                    SideBoxListView(items: viewModel.exchangeRate)
+                    SideBoxDictionaryView(items: viewModel.exchangeRate)
                     Spacer()
                 }
-                .bottomView()
+                .bottomView(
+                    viewToShow: AnyView(CurrencyBoxListView(items: viewModel.hufExchangeRate, spaceBetweenItems: .zero))
+                )
             }
+        }
+        .onAppear {
+            Task { try await viewModel.getHufExchangeRate() }
         }
         .navigationBarHidden(true)
     }

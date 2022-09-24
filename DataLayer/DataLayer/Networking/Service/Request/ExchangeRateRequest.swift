@@ -1,9 +1,11 @@
 import Foundation
 import NetworkingLayer
+import Utils
 
 public final class ExchangeRateRequest: RequestProtocol {
     public var path: String
     public var requestType: NetworkingLayer.RequestType = .GET
+
     public typealias ApiResponse = ExchangeRateListDto
     
     private let currency: Currency

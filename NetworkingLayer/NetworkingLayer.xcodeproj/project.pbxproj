@@ -10,7 +10,10 @@
 		008EBC6528D8EE9A004775EA /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6428D8EE9A004775EA /* APIConstants.swift */; };
 		008EBC6D28D8F609004775EA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6C28D8F609004775EA /* APIManager.swift */; };
 		008EBC6A28D8F5E5004775EA /* APIManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6928D8F5E5004775EA /* APIManagerProtocol.swift */; };
+		00B25FD328DE088400F4CE5D /* CustomParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B25FD228DE088400F4CE5D /* CustomParser.swift */; };
 		008EBC7428D8F9AB004775EA /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC7328D8F9AB004775EA /* EmptyResponse.swift */; };
+		00C8F35B28DF1B680020529F /* ExchangeRateListDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C8F35A28DF1B680020529F /* ExchangeRateListDto.swift */; };
+		00B25FD828DE0CC200F4CE5D /* HufExchangeRateListDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B25FD728DE0CC200F4CE5D /* HufExchangeRateListDto.swift */; };
 		008EBC6828D8F53B004775EA /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6728D8F53B004775EA /* NetworkError.swift */; };
 		00ABF9BA28A44089002F0036 /* NetworkingLayer.docc in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF9B928A44089002F0036 /* NetworkingLayer.docc */; };
 		00ABF9C028A44089002F0036 /* NetworkingLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ABF9B528A44089002F0036 /* NetworkingLayer.framework */; };
@@ -19,7 +22,7 @@
 		008EBC6F28D8F685004775EA /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6E28D8F685004775EA /* RequestManager.swift */; };
 		008EBC6328D8EE2A004775EA /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6228D8EE2A004775EA /* RequestProtocol.swift */; };
 		008EBC6128D8EDDA004775EA /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC6028D8EDDA004775EA /* RequestType.swift */; };
-		008EBC7128D8F94E004775EA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008EBC7028D8F94E004775EA /* Response.swift */; };
+		00B25FD528DE089400F4CE5D /* TextCurrencyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B25FD428DE089400F4CE5D /* TextCurrencyParser.swift */; };
 		0027056E28DB74B000FFCBDC /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056C28DB74B000FFCBDC /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0027056D28DB74B000FFCBDC /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056C28DB74B000FFCBDC /* Utils.framework */; };
 /* End PBXBuildFile section */
@@ -52,7 +55,10 @@
 		008EBC6428D8EE9A004775EA /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		008EBC6C28D8F609004775EA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		008EBC6928D8F5E5004775EA /* APIManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerProtocol.swift; sourceTree = "<group>"; };
+		00B25FD228DE088400F4CE5D /* CustomParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomParser.swift; sourceTree = "<group>"; };
 		008EBC7328D8F9AB004775EA /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		00C8F35A28DF1B680020529F /* ExchangeRateListDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateListDto.swift; sourceTree = "<group>"; };
+		00B25FD728DE0CC200F4CE5D /* HufExchangeRateListDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HufExchangeRateListDto.swift; sourceTree = "<group>"; };
 		008EBC6728D8F53B004775EA /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		00ABF9B928A44089002F0036 /* NetworkingLayer.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NetworkingLayer.docc; sourceTree = "<group>"; };
 		00ABF9B528A44089002F0036 /* NetworkingLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkingLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +68,7 @@
 		008EBC6E28D8F685004775EA /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		008EBC6228D8EE2A004775EA /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		008EBC6028D8EDDA004775EA /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
-		008EBC7028D8F94E004775EA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		00B25FD428DE089400F4CE5D /* TextCurrencyParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCurrencyParser.swift; sourceTree = "<group>"; };
 		0027056C28DB74B000FFCBDC /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				008EBC7328D8F9AB004775EA /* EmptyResponse.swift */,
-				008EBC7028D8F94E004775EA /* Response.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -163,12 +168,32 @@
 			children = (
 				008EBC6B28D8F5F7004775EA /* APIManager */,
 				008EBC6628D8F52D004775EA /* Error */,
+				00B25FD628DE0CB100F4CE5D /* Model */,
+				00B25FD128DE087B00F4CE5D /* Parser */,
 				008EBC7228D8F99B004775EA /* Response */,
 				008EBC6428D8EE9A004775EA /* APIConstants.swift */,
 				008EBC6228D8EE2A004775EA /* RequestProtocol.swift */,
 				008EBC6028D8EDDA004775EA /* RequestType.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		00B25FD128DE087B00F4CE5D /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				00B25FD228DE088400F4CE5D /* CustomParser.swift */,
+				00B25FD428DE089400F4CE5D /* TextCurrencyParser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		00B25FD628DE0CB100F4CE5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00C8F35A28DF1B680020529F /* ExchangeRateListDto.swift */,
+				00B25FD728DE0CC200F4CE5D /* HufExchangeRateListDto.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,13 +313,16 @@
 				008EBC6528D8EE9A004775EA /* APIConstants.swift in Sources */,
 				008EBC6D28D8F609004775EA /* APIManager.swift in Sources */,
 				008EBC6A28D8F5E5004775EA /* APIManagerProtocol.swift in Sources */,
+				00B25FD328DE088400F4CE5D /* CustomParser.swift in Sources */,
 				008EBC7428D8F9AB004775EA /* EmptyResponse.swift in Sources */,
+				00C8F35B28DF1B680020529F /* ExchangeRateListDto.swift in Sources */,
+				00B25FD828DE0CC200F4CE5D /* HufExchangeRateListDto.swift in Sources */,
 				008EBC6828D8F53B004775EA /* NetworkError.swift in Sources */,
 				00ABF9BA28A44089002F0036 /* NetworkingLayer.docc in Sources */,
 				008EBC6F28D8F685004775EA /* RequestManager.swift in Sources */,
 				008EBC6328D8EE2A004775EA /* RequestProtocol.swift in Sources */,
 				008EBC6128D8EDDA004775EA /* RequestType.swift in Sources */,
-				008EBC7128D8F94E004775EA /* Response.swift in Sources */,
+				00B25FD528DE089400F4CE5D /* TextCurrencyParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

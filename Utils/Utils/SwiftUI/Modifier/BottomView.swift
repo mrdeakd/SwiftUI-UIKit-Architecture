@@ -8,6 +8,12 @@ public struct BottomView: ViewModifier {
     @State private var offsetY: CGFloat = .zero
     @State private var fixedOffsetY: CGFloat = .zero
     @State private var opened: Bool = false
+    
+    private let viewToShow: AnyView
+    
+    public init(viewToShow: AnyView) {
+        self.viewToShow = viewToShow
+    }
 
     public func body(content: Content) -> some View {
         ZStack(alignment: .top) {
@@ -17,7 +23,7 @@ public struct BottomView: ViewModifier {
                     .resizable()
                     .frame(width: 56, height: 24)
                     .foregroundColor(Color.lightGreen)
-                    .padding()
+                    .padding(.vertical, 16)
                     .gesture(
                         DragGesture()
                             .onChanged { value in
@@ -48,6 +54,10 @@ public struct BottomView: ViewModifier {
                                 }
                             }
                     )
+                if opened {
+                    viewToShow
+                        .frame(height: bottomViewHeight * 0.7)
+                }
                 Spacer()
             }
             .frame(width: UIScreen.main.bounds.size.width)

@@ -12,13 +12,21 @@
 		00E5FD7228DCB8C400ABEF59 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5FD7128DCB8C400ABEF59 /* BottomView.swift */; };
 		001D8A4F28DC4E8300CFE52C /* BoxItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D8A4E28DC4E8300CFE52C /* BoxItemView.swift */; };
 		0027058828DB85E700FFCBDC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027058728DB85E700FFCBDC /* Color.swift */; };
+		00C8F35E28DF1DEE0020529F /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C8F35D28DF1DEE0020529F /* Currency.swift */; };
+		00B25FDD28DE103700F4CE5D /* CurrencyBoxListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B25FDC28DE103700F4CE5D /* CurrencyBoxListView.swift */; };
+		00B25FE528DE176800F4CE5D /* CurrencyRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B25FE428DE176800F4CE5D /* CurrencyRowItemView.swift */; };
 		0027058128DB786E00FFCBDC /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027058028DB786E00FFCBDC /* Double.swift */; };
+		00C8F36028DF25A30020529F /* EdgeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C8F35F28DF25A30020529F /* EdgeBorder.swift */; };
 		0027058328DB787600FFCBDC /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027058228DB787600FFCBDC /* Encodable.swift */; };
+		00C8F35928DF1B380020529F /* ExchangeRateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C8F35828DF1B380020529F /* ExchangeRateList.swift */; };
+		00B25FE028DE113B00F4CE5D /* HufExchangeRateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B25FDF28DE113B00F4CE5D /* HufExchangeRateList.swift */; };
 		0027057F28DB786400FFCBDC /* LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027057E28DB786400FFCBDC /* LinearGradient.swift */; };
+		00C8F36228DF28CF0020529F /* LocalBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C8F36128DF28CF0020529F /* LocalBundle.swift */; };
 		00ACDFFA28DC8C0200AE3EC8 /* Modifier+ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ACDFF928DC8C0200AE3EC8 /* Modifier+ViewExtension.swift */; };
 		00ACDFFD28DC8C6200AE3EC8 /* PullToRefreshModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ACDFFC28DC8C6200AE3EC8 /* PullToRefreshModifier.swift */; };
+		00B25FE228DE126F00F4CE5D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B25FE128DE126F00F4CE5D /* Response.swift */; };
 		00E5FD7028DCB55900ABEF59 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5FD6F28DCB55900ABEF59 /* RoundedCorners.swift */; };
-		001D8A5128DC4FB500CFE52C /* SideBoxListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D8A5028DC4FB500CFE52C /* SideBoxListView.swift */; };
+		001D8A5128DC4FB500CFE52C /* SideBoxDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D8A5028DC4FB500CFE52C /* SideBoxDictionaryView.swift */; };
 		0027057D28DB784200FFCBDC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027057C28DB784200FFCBDC /* String.swift */; };
 		001D8A5328DC511900CFE52C /* UpperSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D8A5228DC511900CFE52C /* UpperSearchBarView.swift */; };
 		0027054E28DB746500FFCBDC /* Utils.docc in Sources */ = {isa = PBXBuildFile; fileRef = 0027054D28DB746500FFCBDC /* Utils.docc */; };
@@ -43,13 +51,21 @@
 		00E5FD7128DCB8C400ABEF59 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		001D8A4E28DC4E8300CFE52C /* BoxItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxItemView.swift; sourceTree = "<group>"; };
 		0027058728DB85E700FFCBDC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		00C8F35D28DF1DEE0020529F /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		00B25FDC28DE103700F4CE5D /* CurrencyBoxListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyBoxListView.swift; sourceTree = "<group>"; };
+		00B25FE428DE176800F4CE5D /* CurrencyRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRowItemView.swift; sourceTree = "<group>"; };
 		0027058028DB786E00FFCBDC /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		00C8F35F28DF25A30020529F /* EdgeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBorder.swift; sourceTree = "<group>"; };
 		0027058228DB787600FFCBDC /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		00C8F35828DF1B380020529F /* ExchangeRateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateList.swift; sourceTree = "<group>"; };
+		00B25FDF28DE113B00F4CE5D /* HufExchangeRateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HufExchangeRateList.swift; sourceTree = "<group>"; };
 		0027057E28DB786400FFCBDC /* LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradient.swift; sourceTree = "<group>"; };
+		00C8F36128DF28CF0020529F /* LocalBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBundle.swift; sourceTree = "<group>"; };
 		00ACDFF928DC8C0200AE3EC8 /* Modifier+ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Modifier+ViewExtension.swift"; sourceTree = "<group>"; };
 		00ACDFFC28DC8C6200AE3EC8 /* PullToRefreshModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefreshModifier.swift; sourceTree = "<group>"; };
+		00B25FE128DE126F00F4CE5D /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		00E5FD6F28DCB55900ABEF59 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
-		001D8A5028DC4FB500CFE52C /* SideBoxListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBoxListView.swift; sourceTree = "<group>"; };
+		001D8A5028DC4FB500CFE52C /* SideBoxDictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBoxDictionaryView.swift; sourceTree = "<group>"; };
 		0027057C28DB784200FFCBDC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		001D8A5228DC511900CFE52C /* UpperSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperSearchBarView.swift; sourceTree = "<group>"; };
 		0027054D28DB746500FFCBDC /* Utils.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Utils.docc; sourceTree = "<group>"; };
@@ -93,7 +109,9 @@
 			children = (
 				00ACDFF728DC802200AE3EC8 /* ActivityIndicator.swift */,
 				001D8A4E28DC4E8300CFE52C /* BoxItemView.swift */,
-				001D8A5028DC4FB500CFE52C /* SideBoxListView.swift */,
+				00B25FDC28DE103700F4CE5D /* CurrencyBoxListView.swift */,
+				00B25FE428DE176800F4CE5D /* CurrencyRowItemView.swift */,
+				001D8A5028DC4FB500CFE52C /* SideBoxDictionaryView.swift */,
 				001D8A5228DC511900CFE52C /* UpperSearchBarView.swift */,
 			);
 			path = View;
@@ -120,6 +138,7 @@
 		0027054B28DB746500FFCBDC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				00B25FDE28DE112600F4CE5D /* CommonModel */,
 				0027058428DB788400FFCBDC /* Extension */,
 				001D8A4C28DC4E6200CFE52C /* SwiftUI */,
 				0027058528DB857100FFCBDC /* Assets.xcassets */,
@@ -144,6 +163,7 @@
 				0027058028DB786E00FFCBDC /* Double.swift */,
 				0027058228DB787600FFCBDC /* Encodable.swift */,
 				0027057E28DB786400FFCBDC /* LinearGradient.swift */,
+				00C8F36128DF28CF0020529F /* LocalBundle.swift */,
 				0027057C28DB784200FFCBDC /* String.swift */,
 			);
 			path = Extension;
@@ -159,9 +179,29 @@
 			path = Modifier;
 			sourceTree = "<group>";
 		};
+		00B25FDE28DE112600F4CE5D /* CommonModel */ = {
+			isa = PBXGroup;
+			children = (
+				00B25FE328DE128200F4CE5D /* Response */,
+				00C8F35D28DF1DEE0020529F /* Currency.swift */,
+				00C8F35828DF1B380020529F /* ExchangeRateList.swift */,
+				00B25FDF28DE113B00F4CE5D /* HufExchangeRateList.swift */,
+			);
+			path = CommonModel;
+			sourceTree = "<group>";
+		};
+		00B25FE328DE128200F4CE5D /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				00B25FE128DE126F00F4CE5D /* Response.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		00E5FD6E28DCB54D00ABEF59 /* Shape */ = {
 			isa = PBXGroup;
 			children = (
+				00C8F35F28DF25A30020529F /* EdgeBorder.swift */,
 				00E5FD6F28DCB55900ABEF59 /* RoundedCorners.swift */,
 			);
 			path = Shape;
@@ -281,13 +321,21 @@
 				00E5FD7228DCB8C400ABEF59 /* BottomView.swift in Sources */,
 				001D8A4F28DC4E8300CFE52C /* BoxItemView.swift in Sources */,
 				0027058828DB85E700FFCBDC /* Color.swift in Sources */,
+				00C8F35E28DF1DEE0020529F /* Currency.swift in Sources */,
+				00B25FDD28DE103700F4CE5D /* CurrencyBoxListView.swift in Sources */,
+				00B25FE528DE176800F4CE5D /* CurrencyRowItemView.swift in Sources */,
 				0027058128DB786E00FFCBDC /* Double.swift in Sources */,
+				00C8F36028DF25A30020529F /* EdgeBorder.swift in Sources */,
 				0027058328DB787600FFCBDC /* Encodable.swift in Sources */,
+				00C8F35928DF1B380020529F /* ExchangeRateList.swift in Sources */,
+				00B25FE028DE113B00F4CE5D /* HufExchangeRateList.swift in Sources */,
 				0027057F28DB786400FFCBDC /* LinearGradient.swift in Sources */,
+				00C8F36228DF28CF0020529F /* LocalBundle.swift in Sources */,
 				00ACDFFA28DC8C0200AE3EC8 /* Modifier+ViewExtension.swift in Sources */,
 				00ACDFFD28DC8C6200AE3EC8 /* PullToRefreshModifier.swift in Sources */,
+				00B25FE228DE126F00F4CE5D /* Response.swift in Sources */,
 				00E5FD7028DCB55900ABEF59 /* RoundedCorners.swift in Sources */,
-				001D8A5128DC4FB500CFE52C /* SideBoxListView.swift in Sources */,
+				001D8A5128DC4FB500CFE52C /* SideBoxDictionaryView.swift in Sources */,
 				0027057D28DB784200FFCBDC /* String.swift in Sources */,
 				001D8A5328DC511900CFE52C /* UpperSearchBarView.swift in Sources */,
 				0027054E28DB746500FFCBDC /* Utils.docc in Sources */,
