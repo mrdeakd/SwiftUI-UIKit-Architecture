@@ -1,12 +1,13 @@
 import SwiftUI
 import Combine
 import Utils
-import DataLayer
 
 protocol MainScreenViewModelProtocol: ObservableObject {
     func getExchangeRateForSelectedCurrency() async throws
+    func getHufExchangeRate() async throws
 
     var exchangeRate: [String: Double] { get }
+    var hufExchangeRate: [HufExchangeRateItem] { get }
     var selectedCurrency: String { get set }
 }
 
@@ -15,6 +16,8 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
     private let repository: AppRepositoryProtocol
     
     @Published var exchangeRate: [String: Double] = [:]
+    @Published var hufExchangeRate: [HufExchangeRateItem] = []
+
     @Published var selectedCurrency: String = .empty
 
     init(navigation: MainScreenNavigationProtocol, repository: AppRepositoryProtocol) {
@@ -23,7 +26,7 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
     }
     
     func getExchangeRateForSelectedCurrency() async throws {
-        let result = try await ExchangeRateService.defaultService.getExchangeRates(payload: ExchangeRatePayloadDto(currency: Currency(from: selectedCurrency)))
+        let result = try await repository.getExchangeRateForSelectedCurrency(selectedCurrency: Currency(from: selectedCurrency))
 
         let filterKnownAndSelectedCurrency = filterKnownAndSelectedCurrency(items: result.rates)
         
@@ -31,6 +34,18 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
 
         DispatchQueue.main.async {
             self.exchangeRate = inverseLessThanZeroValue
+        }
+    }
+    
+    func getHufExchangeRate() async throws {
+        let result = try await repository.getHufExchangeRate()
+
+        let filtered = result.items.filter {
+            Currency.allCases.contains(Currency(from: $0.currency))
+        }
+        
+        DispatchQueue.main.async {
+            self.hufExchangeRate = filtered
         }
     }
     

@@ -1,4 +1,4 @@
-import NetworkingLayer
+import Utils
 
 public struct ExchangeRateListDto: Response {
     public let result: String

@@ -3,14 +3,14 @@ import SwiftUI
 public struct BoxItemView: View {
     let title: String
     let subText: String
+    let subSubText: String?
     let itemSize: CGFloat
-    let spaceBetweenItems: CGFloat
     
-    public init(title: String, subText: String, itemSize: CGFloat, spaceBetweenItems: CGFloat) {
+    public init(title: String, subText: String, subSubText: String? = nil, itemSize: CGFloat) {
         self.title = title
         self.subText = subText
+        self.subSubText = subSubText
         self.itemSize = itemSize
-        self.spaceBetweenItems = spaceBetweenItems
     }
     
     public var body: some View {
@@ -24,12 +24,14 @@ public struct BoxItemView: View {
                 Text(subText)
                     .font(.system(size: 18, weight: .bold, design: .serif))
                     .foregroundColor(.lightBrown)
+                if let subSubText = subSubText {
+                    Text(subSubText)
+                        .font(.system(size: 18, weight: .bold, design: .serif))
+                        .foregroundColor(.lightBrown)
+                }
             }
-            .padding(.vertical)
         }
-        .transition(.move(edge: .leading))
         .frame(width: itemSize, height: itemSize)
-        .padding(.vertical, spaceBetweenItems)
     }
 }
 
@@ -40,8 +42,7 @@ struct BoxItemView_Previews: PreviewProvider {
             BoxItemView(
                 title: "Title",
                 subText: "SubText",
-                itemSize: 126,
-                spaceBetweenItems: 16
+                itemSize: 126
             )
         }
     }

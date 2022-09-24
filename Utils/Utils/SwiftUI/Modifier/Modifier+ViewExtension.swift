@@ -9,7 +9,11 @@ public extension View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
     
-    func bottomView() -> some View {
-        modifier(BottomView())
+    func bottomView(viewToShow: AnyView) -> some View {
+        modifier(BottomView(viewToShow: viewToShow))
+    }
+    
+    func border(width: CGFloat, edges: [Edge], color: Color) -> some View {
+        overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))
     }
 }
