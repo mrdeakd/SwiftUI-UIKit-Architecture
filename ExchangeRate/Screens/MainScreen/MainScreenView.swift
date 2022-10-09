@@ -11,20 +11,22 @@ struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     UpperSearchBarView(
-                        title: "Welcome back,",
+                        title: ExchangeRateLocalizable.search_bar_title(preferredLanguages: PreferredAppLanguage.current),
                         subText: "David",
-                        image: "magnifyingglass",
-                        placeholder: "Try to find...",
+                        image: ExchangeRateLocalizable.magnifyingglass(),
+                        placeholder: ExchangeRateLocalizable.search_bar_placeholder(preferredLanguages: PreferredAppLanguage.current),
                         paddingSize: 12,
                         text: $viewModel.selectedCurrency,
                         onAsyncSearch: viewModel.getExchangeRateForSelectedCurrency,
-                        onAsyncSubmit: viewModel.getExchangeRateForSelectedCurrency
+                        onAsyncSubmit: viewModel.getExchangeRateForSelectedCurrency,
+                        onIconTap: viewModel.goToCreatorScreen
                     )
                     .pullToRefresh(
-                        baseHeight: 144,
                         pullAction: { Task { try await viewModel.getExchangeRateForSelectedCurrency() } }
                     )
-                    SideBoxDictionaryView(items: viewModel.exchangeRate)
+                    VStack {
+                        SideBoxDictionaryView(items: viewModel.exchangeRate)
+                    }
                     Spacer()
                 }
                 .bottomView(
@@ -41,7 +43,13 @@ struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
 
 struct MainScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        MainScreenView(viewModel: MainScreenViewModel(navigation: MainScreenNavigation(), repository: AppRepository()))
+        MainScreenView(
+            viewModel: MainScreenViewModel(
+                navigation: MainScreenNavigation(),
+                repository: AppRepository(),
+                overlayManager: OverlayManager(appDependency: AppDependency())
+            )
+        )
     }
 }
 

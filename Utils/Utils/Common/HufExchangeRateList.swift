@@ -6,7 +6,7 @@ public struct HufExchangeRateList: Response {
     }
 }
 
-public struct HufExchangeRateItem: Response, Hashable {
+public struct HufExchangeRateItem: Response, Hashable {    
     public let currency: String
     public let sellRate: String
     public let buyRate: String

@@ -66,6 +66,8 @@ public extension RequestProtocol {
             urlRequest.httpBody = try JSONSerialization.data(withJSONObject: params)
         }
         
+        ExchangeLogger.shared.info(urlRequest, category: .network)
+        
         return urlRequest
     }
 }
