@@ -48,7 +48,7 @@ struct SideBoxDictionaryView_Previews: PreviewProvider {
         ZStack {
             Color.black
             SideBoxDictionaryView(
-                items: ["Item1": 1, "Item2": 2, "Item3": 3],
+                items: ["ItemOne": 1, "ItemTwo": 2, "ItemThree": 3],
                 paddingSize: 16,
                 itemSize: 126,
                 spaceBetweenItems: 16,

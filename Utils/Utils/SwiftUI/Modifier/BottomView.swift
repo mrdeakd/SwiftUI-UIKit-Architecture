@@ -19,7 +19,7 @@ public struct BottomView: ViewModifier {
         ZStack(alignment: .top) {
             content
             VStack {
-                Image(systemName: "line.horizontal.3")
+                Image(systemName: ExchangeRateLocalizable.lineHorizontal())
                     .resizable()
                     .frame(width: 56, height: 24)
                     .foregroundColor(Color.lightGreen)
@@ -45,7 +45,9 @@ public struct BottomView: ViewModifier {
                                     if abs(value.translation.height) > (bottomViewHeight / 4) {
                                         if opened {
                                             fixedOffsetY = .zero
-                                            opened = false
+                                            withAnimation(.easeIn.delay(0.2)) {
+                                                opened = false
+                                            }
                                         } else {
                                             fixedOffsetY = baseRestOfOffsetY - bottomViewHeight
                                             opened = true
@@ -56,6 +58,12 @@ public struct BottomView: ViewModifier {
                     )
                 if opened {
                     viewToShow
+                        .transition(
+                            .asymmetric(
+                                insertion: .scale,
+                                removal: .move(edge: .bottom)
+                            )
+                        )
                         .frame(height: bottomViewHeight * 0.7)
                 }
                 Spacer()

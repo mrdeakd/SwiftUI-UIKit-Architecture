@@ -5,6 +5,7 @@ import Utils
 protocol MainScreenViewModelProtocol: ObservableObject {
     func getExchangeRateForSelectedCurrency() async throws
     func getHufExchangeRate() async throws
+    func goToCreatorScreen()
 
     var exchangeRate: [String: Double] { get }
     var hufExchangeRate: [HufExchangeRateItem] { get }
@@ -14,39 +15,36 @@ protocol MainScreenViewModelProtocol: ObservableObject {
 final class MainScreenViewModel: MainScreenViewModelProtocol {
     private let navigation: MainScreenNavigationProtocol
     private let repository: AppRepositoryProtocol
+    private let overlayManager: OverlayManagerProtocol
     
     @Published var exchangeRate: [String: Double] = [:]
     @Published var hufExchangeRate: [HufExchangeRateItem] = []
-
     @Published var selectedCurrency: String = .empty
 
-    init(navigation: MainScreenNavigationProtocol, repository: AppRepositoryProtocol) {
+    init(navigation: MainScreenNavigationProtocol, repository: AppRepositoryProtocol, overlayManager: OverlayManagerProtocol) {
         self.navigation = navigation
         self.repository = repository
+        self.overlayManager = overlayManager
     }
     
     func getExchangeRateForSelectedCurrency() async throws {
-        let result = try await repository.getExchangeRateForSelectedCurrency(selectedCurrency: Currency(from: selectedCurrency))
-
-        let filterKnownAndSelectedCurrency = filterKnownAndSelectedCurrency(items: result.rates)
-        
-        let inverseLessThanZeroValue = inverseLessThanZeroValue(items: filterKnownAndSelectedCurrency)
-
-        DispatchQueue.main.async {
-            self.exchangeRate = inverseLessThanZeroValue
-        }
+        await overlayManager.asyncRequestWithLoading(
+            request: try await repository.getExchangeRateForSelectedCurrency(selectedCurrency: Currency(from: selectedCurrency)),
+            onLoaded: { result in
+                let filterKnownAndSelectedCurrency = self.filterKnownAndSelectedCurrency(items: result.rates)
+                let inverseLessThanZeroValue = self.inverseLessThanZeroValue(items: filterKnownAndSelectedCurrency)
+                DispatchQueue.main.async { self.exchangeRate = inverseLessThanZeroValue }
+            }
+        )
     }
     
     func getHufExchangeRate() async throws {
-        let result = try await repository.getHufExchangeRate()
-
-        let filtered = result.items.filter {
-            Currency.allCases.contains(Currency(from: $0.currency))
-        }
-        
-        DispatchQueue.main.async {
-            self.hufExchangeRate = filtered
-        }
+        await overlayManager.asyncRequestWithLoading(
+            request: try await repository.getHufExchangeRate(),
+            onLoaded: { result in
+                let filtered = result.items.filter { Currency.allCases.contains(Currency(from: $0.currency)) }
+                DispatchQueue.main.async { self.hufExchangeRate = filtered }
+            })
     }
     
     func filterKnownAndSelectedCurrency(items: [String: Double]) -> [String: Double] {
@@ -65,5 +63,9 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
                     return (key, value)
                 }
             })
+    }
+    
+    func goToCreatorScreen() {
+        navigation.onGoToCreatorScreen?()
     }
 }

@@ -15,7 +15,7 @@ public class RequestManager: RequestManagerProtocol {
     
     public func perform<T: Response>(_ request: any RequestProtocol) async throws -> T {
         let data = try await apiManager.perform(request)
-        
+
         if let parser = parser {
             let decoded: T =  parser.parse(data: data, to: T.self)
             return decoded
