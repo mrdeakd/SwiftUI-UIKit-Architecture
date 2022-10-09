@@ -10,6 +10,7 @@ public struct UpperSearchBarView: View {
     let text: Binding<String>
     let onAsyncSearch: (() async throws -> Void)?
     let onAsyncSubmit: (() async throws -> Void)?
+    let onIconTap: (() -> Void)?
 
     public init(
         title: String,
@@ -18,8 +19,9 @@ public struct UpperSearchBarView: View {
         placeholder: String,
         paddingSize: CGFloat,
         text: Binding<String>,
-        onAsyncSearch: (() async throws -> Void)?,
-        onAsyncSubmit: (() async throws -> Void)?
+        onAsyncSearch: (() async throws -> Void)? = nil,
+        onAsyncSubmit: (() async throws -> Void)? = nil,
+        onIconTap: (() -> Void)? = nil
     ) {
         self.title = title
         self.subText = subText
@@ -29,33 +31,60 @@ public struct UpperSearchBarView: View {
         self.text = text
         self.onAsyncSearch = onAsyncSearch
         self.onAsyncSubmit = onAsyncSubmit
+        self.onIconTap = onIconTap
     }
 
     public var body: some View {
-        ZStack {
-            Color.white
-                .cornerRadius(12)
-                .edgesIgnoringSafeArea(.all)
-            VStack(alignment: .leading) {
+        VStack(alignment: .leading) {
+            HStack {
                 Text(title)
                     .font(.largeTitle)
                     .foregroundColor(.lightBrown)
-                Text(subText).font(.title2)
-                    .font(.subheadline)
+                Spacer()
+                Image(systemName: ExchangeRateLocalizable.infoCircle())
+                    .resizable()
+                    .renderingMode(.template)
                     .foregroundColor(.lightBrown)
-                    .fontWeight(.thin)
-                HStack {
-                    Image(systemName: image)
-                        .onTapGesture { Task { try await onAsyncSearch?() } }
-                    TextField(placeholder, text: text)
-                        .textInputAutocapitalization(.characters)
-                        .onSubmit { Task { try await onAsyncSubmit?() } }
-                }
-                .textFieldStyle(.roundedBorder)
+                    .frame(width: 24, height: 24)
+                    .onTapGesture { onIconTap?() }
             }
-            .padding(.horizontal, paddingSize)
+            Text(subText).font(.title2)
+                .font(.subheadline)
+                .foregroundColor(.lightBrown)
+                .fontWeight(.thin)
+            HStack {
+                Image(systemName: image)
+                    .onTapGesture { Task { try await onAsyncSearch?() } }
+                TextField(placeholder, text: text)
+                    .textInputAutocapitalization(.characters)
+                    .onSubmit { Task { try await onAsyncSubmit?() } }
+                Image(systemName: ExchangeRateLocalizable.clearText())
+                    .foregroundColor(.lightBrown)
+                    .opacity(text.wrappedValue == .empty ? 0 : 1)
+                    .onTapGesture { text.wrappedValue = .empty }
+            }
+            .padding(paddingSize)
+            .background(.gray.opacity(0.1))
+            .cornerRadius(12)
         }
-        .frame(height: 144)
+        .padding(paddingSize)
+        .background(.white)
         .padding(.bottom, paddingSize)
+    }
+}
+
+struct UpperSearchBarView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Color.black
+            UpperSearchBarView(
+                title: "Title",
+                subText: "SubText",
+                image: "magnifyingglass",
+                placeholder: "Placeholder",
+                paddingSize: 16,
+                text: .constant("Search text")
+            )
+        }
     }
 }

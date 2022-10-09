@@ -3,15 +3,12 @@ import Utils
 public protocol RequestProtocol {
     associatedtype ApiResponse: Response
 
+    var host: String { get }
     var path: String { get }
-    
     var headers: [String: String] { get }
     var params: [String: Any] { get }
-    
     var urlParams: [String: String?] { get }
-    
     var addAuthorizationToken: Bool { get }
-    
     var requestType: RequestType { get }
 }
 
@@ -68,6 +65,8 @@ public extension RequestProtocol {
         if !params.isEmpty {
             urlRequest.httpBody = try JSONSerialization.data(withJSONObject: params)
         }
+        
+        ExchangeLogger.shared.info(urlRequest, category: .network)
         
         return urlRequest
     }

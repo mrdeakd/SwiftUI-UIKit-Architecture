@@ -1,3 +1,5 @@
+import Utils
+
 public class APIManager: APIManagerProtocol {
     private let urlSession: URLSession
     
@@ -7,9 +9,19 @@ public class APIManager: APIManagerProtocol {
     
     public func perform(_ request: any RequestProtocol) async throws -> Data {
         let (data, response) = try await urlSession.data(for: request.createURLRequest())
+        
+        ExchangeLogger.shared.info(data.toString(), category: .network)
+        ExchangeLogger.shared.info(response, category: .network)
 
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw NetworkError.invalidServerResponse
+        if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+            switch httpResponse.statusCode {
+            case 404:
+                ExchangeLogger.shared.error(NetworkError.notFound.localizedDescription, category: .network)
+                throw NetworkError.notFound
+            default:
+                ExchangeLogger.shared.error(NetworkError.invalidServerResponse.localizedDescription, category: .network)
+                throw NetworkError.invalidServerResponse
+            }
         }
 
         return data
