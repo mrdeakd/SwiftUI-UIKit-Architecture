@@ -1,0 +1,12 @@
+sources:
+  include:
+  - ../ExchangeRate
+templates:
+- /Users/maci/SwiftUI-UIKit-Architecture/.mockyDF37E8C5-5804-40F9-B650-9A5FCC3E3C54/.template.swifttemplate
+output: /Users/maci/SwiftUI-UIKit-Architecture/.mockyDF37E8C5-5804-40F9-B650-9A5FCC3E3C54/types.yaml
+args:
+  swiftyMocky:
+    import:
+    - Foundation
+    testable:
+    - ExchangeRate
