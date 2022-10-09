@@ -2,6 +2,7 @@ import Foundation
 import DataLayer
 import Utils
 
+// sourcery: AutoMockable
 public protocol AppRepositoryProtocol {
     func getExchangeRateForSelectedCurrency(selectedCurrency: Currency) async throws -> ExchangeRateList
     func getHufExchangeRate() async throws -> HufExchangeRateList

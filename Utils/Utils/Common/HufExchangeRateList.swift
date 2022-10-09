@@ -17,3 +17,15 @@ public struct HufExchangeRateItem: Response, Hashable {
         self.buyRate = buyRate
     }
 }
+
+extension HufExchangeRateItem {
+    public static let mockList = [
+        HufExchangeRateItem(currency: "HUF", sellRate: "1.0", buyRate: "2.0"),
+        HufExchangeRateItem(currency: "EUR", sellRate: "3.0", buyRate: "4.0"),
+        HufExchangeRateItem(currency: "USD", sellRate: "5.0", buyRate: "6.0")
+    ]
+}
+
+extension HufExchangeRateList {
+    public static let mock = HufExchangeRateList(items: HufExchangeRateItem.mockList)
+}
