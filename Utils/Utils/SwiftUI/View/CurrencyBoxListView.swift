@@ -1,28 +1,27 @@
 import SwiftUI
 
+// swiftlint:disable line_length
 public struct CurrencyBoxListView: View {
     let items: [HufExchangeRateItem]
     let paddingSize: CGFloat
     let spaceBetweenItems: CGFloat
-    
+
     public init(items: [HufExchangeRateItem], paddingSize: CGFloat = 6, spaceBetweenItems: CGFloat = 16) {
         self.items = items
         self.paddingSize = paddingSize
         self.spaceBetweenItems = spaceBetweenItems
     }
- 
+
     public var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            ScrollViewReader { value in
-                VStack(spacing: spaceBetweenItems) {
-                    ForEach(items, id: \.self) { item in
-                        CurrencyRowItemView(
-                            title: item.currency,
-                            subText: "\(ExchangeRateLocalizable.buy_rate(preferredLanguages: PreferredAppLanguage.current)) - \(item.buyRate)",
-                            subSubText: "\(ExchangeRateLocalizable.sell_rate(preferredLanguages: PreferredAppLanguage.current)) - \(item.sellRate)",
-                            iconName: Currency(from: item.currency).imageName
-                        )
-                    }
+            VStack(spacing: spaceBetweenItems) {
+                ForEach(items, id: \.self) { item in
+                    CurrencyRowItemView(
+                        title: item.currency,
+                        subText: "\(ExchangeRateLocalizable.buy_rate(preferredLanguages: PreferredAppLanguage.current)) - \(item.buyRate)",
+                        subSubText: "\(ExchangeRateLocalizable.sell_rate(preferredLanguages: PreferredAppLanguage.current)) - \(item.sellRate)",
+                        iconName: Currency(from: item.currency).imageName
+                    )
                 }
             }
         }

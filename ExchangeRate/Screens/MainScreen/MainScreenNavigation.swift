@@ -1,5 +1,6 @@
 import Foundation
 
+// sourcery: AutoMockable
 protocol MainScreenNavigationProtocol {
     var onFinish: (() -> Void)? { get set }
     var onGoToCreatorScreen: (() -> Void)? { get set }

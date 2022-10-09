@@ -7,7 +7,7 @@ public final class ExchangeRateRequest: RequestProtocol {
     public var requestType: NetworkingLayer.RequestType = .GET
 
     public typealias ApiResponse = ExchangeRateListDto
-    
+
     private let currency: Currency
 
     public init(payload: ExchangeRatePayloadDto) {

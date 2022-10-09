@@ -5,11 +5,11 @@ public struct ActivityIndicator: View {
 
     private let style = StrokeStyle(lineWidth: 6, lineCap: .round)
     private let color = Color.lightGreen
-    
+
     public init(animate: Bool = false) {
         self.animate = animate
     }
-    
+
     public var body: some View {
         ZStack {
             Circle()
@@ -24,7 +24,7 @@ public struct ActivityIndicator: View {
                     AngularGradient(gradient: .init(colors: [color]), center: .center), style: style
                 )
                 .rotationEffect(.degrees(animate ? 360 : 0))
-        }.onAppear() {
+        }.onAppear {
             withAnimation(.linear(duration: 1).repeatForever(autoreverses: false)) {
                 self.animate = true
             }

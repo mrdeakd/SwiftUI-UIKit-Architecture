@@ -1,7 +1,7 @@
 import Foundation
 
 public enum Currency: Codable {
-    case EUR, USD, GBP, HUF, CHF, CAD, Unknown
+    case EUR, USD, GBP, HUF, CHF, CAD, unknown
 
     public init(from string: String) {
         switch string.uppercased() {
@@ -18,7 +18,7 @@ public enum Currency: Codable {
         case ExchangeRateLocalizable.cad():
             self = .CAD
         default:
-            self = .Unknown
+            self = .unknown
         }
     }
 }
@@ -42,11 +42,11 @@ public extension Currency {
             return ExchangeRateLocalizable.chf()
         case .CAD:
             return ExchangeRateLocalizable.cad()
-        case .Unknown:
+        case .unknown:
             return ExchangeRateLocalizable.invalid_currency(preferredLanguages: PreferredAppLanguage.current)
         }
     }
-    
+
     var imageName: String {
         switch self {
         case .EUR:
@@ -61,7 +61,7 @@ public extension Currency {
             return ExchangeRateLocalizable.chf().lowercased()
         case .CAD:
             return ExchangeRateLocalizable.cad().lowercased()
-        case .Unknown:
+        case .unknown:
             return ExchangeRateLocalizable.invalid_currency(preferredLanguages: PreferredAppLanguage.current)
         }
     }

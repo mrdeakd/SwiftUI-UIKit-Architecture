@@ -16,25 +16,25 @@ public struct WindowManager {
         window.makeKeyAndVisible()
         return window
     }
-    
+
     public func addLoadingWindowTo(scene: UIScene) -> UIWindow? {
         guard let scene = (scene as? UIWindowScene), let appDependency = appDependency else { return nil }
         let loadingHandler = appDependency.makeLoadingHandler()
         let loadingViewController = UIHostingController(rootView: LoadingView().environmentObject(loadingHandler))
         loadingViewController.view.backgroundColor = .clear
-        
+
         let loadingWindow = PassThroughWindow(windowScene: scene)
         loadingWindow.rootViewController = loadingViewController
         loadingWindow.isHidden = false
         return loadingWindow
     }
-    
+
     public func addAlertWindowTo(scene: UIScene) -> UIWindow? {
         guard let scene = (scene as? UIWindowScene), let appDependency = appDependency else { return nil }
         let alertHandler = appDependency.makeAlertHandler()
         let alertViewController = UIHostingController(rootView: AlertView().environmentObject(alertHandler))
         alertViewController.view.backgroundColor = .clear
-        
+
         let alertWindow = PassThroughWindow(windowScene: scene)
         alertWindow.rootViewController = alertViewController
         alertWindow.isHidden = false

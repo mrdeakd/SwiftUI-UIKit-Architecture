@@ -1,5 +1,5 @@
 import Foundation
 
 public protocol CustomParser {
-    func parse<T>(data: Data, to: T.Type) -> T
+    func parse<T>(data: Data, into: T.Type) -> T?
 }

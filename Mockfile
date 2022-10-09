@@ -1,0 +1,15 @@
+sourceryCommand: null
+sourceryTemplate: null
+ExchangeRateTests:
+  sources:
+    include:
+    - ./ExchangeRate
+  output: ./ExchangeRateTests/Generated/Mock.ExchangeRate.generated.swift
+  targets:
+  - ExchangeRateTests
+  testable:
+  - ExchangeRate
+  import:
+  - DataLayer
+  - Foundation
+  - Utils

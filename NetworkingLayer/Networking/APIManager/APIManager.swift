@@ -2,14 +2,14 @@ import Utils
 
 public class APIManager: APIManagerProtocol {
     private let urlSession: URLSession
-    
+
     public init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
     }
-    
+
     public func perform(_ request: any RequestProtocol) async throws -> Data {
         let (data, response) = try await urlSession.data(for: request.createURLRequest())
-        
+
         ExchangeLogger.shared.info(data.toString(), category: .network)
         ExchangeLogger.shared.info(response, category: .network)
 
