@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		00B25FDB28DE0E7C00F4CE5D /* CurrencyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B25FDA28DE0E7C00F4CE5D /* CurrencyMapper.swift */; };
 		00ABF95428A427FC002F0036 /* DataLayer.docc in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF95328A427FC002F0036 /* DataLayer.docc */; };
-		00ABF95A28A427FD002F0036 /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ABF94F28A427FC002F0036 /* DataLayer.framework */; };
 		00ABF96028A427FD002F0036 /* DataLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 00ABF95228A427FC002F0036 /* DataLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00ABF95F28A427FD002F0036 /* DataLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF95E28A427FD002F0036 /* DataLayerTests.swift */; };
 		00ABF97C28A429E9002F0036 /* ExchangeRateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF97B28A429E9002F0036 /* ExchangeRateRequest.swift */; };
 		00ABF99128A43003002F0036 /* ExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABF99028A43003002F0036 /* ExchangeRateService.swift */; };
 		00B25FC928DE033D00F4CE5D /* HufExchangeRateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B25FC828DE033D00F4CE5D /* HufExchangeRateRequest.swift */; };
@@ -21,16 +19,6 @@
 		0027056A28DB74A700FFCBDC /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056828DB74A700FFCBDC /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0027056928DB74A700FFCBDC /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0027056828DB74A700FFCBDC /* Utils.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		00ABF95B28A427FD002F0036 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 00ABF94628A427FC002F0036 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 00ABF94E28A427FC002F0036;
-			remoteInfo = DataLayer;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		00ABFA1828A4437A002F0036 /* Embed Frameworks */ = {
@@ -52,8 +40,6 @@
 		00ABF95328A427FC002F0036 /* DataLayer.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DataLayer.docc; sourceTree = "<group>"; };
 		00ABF94F28A427FC002F0036 /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ABF95228A427FC002F0036 /* DataLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataLayer.h; sourceTree = "<group>"; };
-		00ABF95E28A427FD002F0036 /* DataLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayerTests.swift; sourceTree = "<group>"; };
-		00ABF95928A427FD002F0036 /* DataLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ABF97B28A429E9002F0036 /* ExchangeRateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateRequest.swift; sourceTree = "<group>"; };
 		00ABF99028A43003002F0036 /* ExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateService.swift; sourceTree = "<group>"; };
 		00B25FC828DE033D00F4CE5D /* HufExchangeRateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HufExchangeRateRequest.swift; sourceTree = "<group>"; };
@@ -72,14 +58,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		00ABF95628A427FD002F0036 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00ABF95A28A427FD002F0036 /* DataLayer.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -87,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				00ABF95128A427FC002F0036 /* DataLayer */,
-				00ABF95D28A427FD002F0036 /* DataLayerTests */,
 				00ABFA1428A4437A002F0036 /* Frameworks */,
 				00ABF95028A427FC002F0036 /* Products */,
 			);
@@ -97,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				00ABF94F28A427FC002F0036 /* DataLayer.framework */,
-				00ABF95928A427FD002F0036 /* DataLayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,14 +86,6 @@
 				00ABF95228A427FC002F0036 /* DataLayer.h */,
 			);
 			path = DataLayer;
-			sourceTree = "<group>";
-		};
-		00ABF95D28A427FD002F0036 /* DataLayerTests */ = {
-			isa = PBXGroup;
-			children = (
-				00ABF95E28A427FD002F0036 /* DataLayerTests.swift */,
-			);
-			path = DataLayerTests;
 			sourceTree = "<group>";
 		};
 		00ABF97728A4290A002F0036 /* Networking */ = {
@@ -200,24 +168,6 @@
 			productReference = 00ABF94F28A427FC002F0036 /* DataLayer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		00ABF95828A427FD002F0036 /* DataLayerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 00ABF96628A427FD002F0036 /* Build configuration list for PBXNativeTarget "DataLayerTests" */;
-			buildPhases = (
-				00ABF95528A427FD002F0036 /* Sources */,
-				00ABF95628A427FD002F0036 /* Frameworks */,
-				00ABF95728A427FD002F0036 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				00ABF95C28A427FD002F0036 /* PBXTargetDependency */,
-			);
-			name = DataLayerTests;
-			productName = DataLayerTests;
-			productReference = 00ABF95928A427FD002F0036 /* DataLayerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -229,9 +179,6 @@
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					00ABF94E28A427FC002F0036 = {
-						CreatedOnToolsVersion = 13.4.1;
-					};
-					00ABF95828A427FD002F0036 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
@@ -252,20 +199,12 @@
 			projectRoot = "";
 			targets = (
 				00ABF94E28A427FC002F0036 /* DataLayer */,
-				00ABF95828A427FD002F0036 /* DataLayerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00ABF94D28A427FC002F0036 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		00ABF95728A427FD002F0036 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,23 +227,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		00ABF95528A427FD002F0036 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00ABF95F28A427FD002F0036 /* DataLayerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		00ABF95C28A427FD002F0036 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 00ABF94E28A427FC002F0036 /* DataLayer */;
-			targetProxy = 00ABF95B28A427FD002F0036 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		00ABF96128A427FD002F0036 /* Debug */ = {
@@ -485,40 +408,6 @@
 			};
 			name = Release;
 		};
-		00ABF96728A427FD002F0036 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8HWHNR92LW;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = david.deak.DataLayerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		00ABF96828A427FD002F0036 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8HWHNR92LW;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = david.deak.DataLayerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -536,15 +425,6 @@
 			buildConfigurations = (
 				00ABF96428A427FD002F0036 /* Debug */,
 				00ABF96528A427FD002F0036 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		00ABF96628A427FD002F0036 /* Build configuration list for PBXNativeTarget "DataLayerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				00ABF96728A427FD002F0036 /* Debug */,
-				00ABF96828A427FD002F0036 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
