@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-public protocol BaseDependency{
+public protocol BaseDependency {
     func makeRootNavigationController() -> UINavigationController
 }
 

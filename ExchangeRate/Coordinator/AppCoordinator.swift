@@ -7,9 +7,9 @@ public final class AppCoordinator: Coordinator {
 
     private let repository: AppRepositoryProtocol
     private let factory: AppModuleFactoryProtocol
-    
+
     private let dependecySolver: AppDependencyProtocol
-    
+
     public init(
         dependencySolver: AppDependencyProtocol,
         navigationController: UINavigationController,
@@ -21,32 +21,38 @@ public final class AppCoordinator: Coordinator {
         self.onFinished = onFinished
         self.repository = dependencySolver.makeAppRepository()
     }
-    
+
     public func start() {
         gotoMainScreen()
     }
-    
+
     private func gotoMainScreen() {
         var module = factory.createMainScreen(repository: repository)
-        
+
         module.navigation.onFinish = {
             print("Finished")
         }
-        
+
         module.navigation.onGoToCreatorScreen = { [weak self] in
             self?.goToCreatorScreen()
         }
-        
-        navigationController.pushViewController(module.viewController, animated: !navigationController.viewControllers.isEmpty)
+
+        navigationController.pushViewController(
+            module.viewController,
+            animated: !navigationController.viewControllers.isEmpty
+        )
     }
-    
+
     private func goToCreatorScreen() {
         var module = factory.createCreatorScreen()
-        
+
         module.navigation.onClose = { [weak self] in
             self?.navigationController.popViewController(animated: true)
         }
-        
-        navigationController.pushViewController(module.viewController, animated: !navigationController.viewControllers.isEmpty)
+
+        navigationController.pushViewController(
+            module.viewController,
+            animated: !navigationController.viewControllers.isEmpty
+        )
     }
 }

@@ -12,12 +12,11 @@ public class RequestManager: RequestManagerProtocol {
         self.apiManager = apiManager
         self.parser = parser
     }
-    
+
     public func perform<T: Response>(_ request: any RequestProtocol) async throws -> T {
         let data = try await apiManager.perform(request)
 
-        if let parser = parser {
-            let decoded: T =  parser.parse(data: data, to: T.self)
+        if let parser, let decoded: T =  parser.parse(data: data, into: T.self) {
             return decoded
         }
 

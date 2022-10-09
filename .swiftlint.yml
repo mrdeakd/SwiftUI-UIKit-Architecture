@@ -1,0 +1,6 @@
+included:
+
+excluded:
+  - Utils/Utils/Resources
+  - ExchangeRate.xcworkspace
+  - ExchangeRate.xcodeproj

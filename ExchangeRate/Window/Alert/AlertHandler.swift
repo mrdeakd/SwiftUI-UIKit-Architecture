@@ -11,7 +11,7 @@ public final class AlertHandler: ObservableObject {
     @MainActor
     func addItemToAlertQueue(item: AlertHandler.Item) {
         queue.insert(item)
-        
+
         if timer == nil {
             timer = Timer.scheduledTimer(
                 timeInterval: 1.0,
@@ -22,7 +22,7 @@ public final class AlertHandler: ObservableObject {
             )
         }
     }
-    
+
     @MainActor
     @objc func removeItemFromQueue() {
         if queue.isEmpty {
@@ -36,7 +36,7 @@ public final class AlertHandler: ObservableObject {
             }
         }
     }
-    
+
     func hideAfter(delay: Int = 0) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(delay)) { [weak self] in
             self?.nextAlert = nil
@@ -68,7 +68,7 @@ extension AlertHandler {
             lhs.message == rhs.message &&
             lhs.delay == rhs.delay
         }
-        
+
         public func hash(into hasher: inout Hasher) {
             hasher.combine(title)
             hasher.combine(message)

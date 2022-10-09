@@ -44,7 +44,3 @@ struct MainScreenView_Previews: PreviewProvider {
         MainScreenView(viewModel: MainScreenViewModel(navigation: MainScreenNavigation(), repository: AppRepository()))
     }
 }
-
-
-
-

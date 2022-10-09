@@ -6,15 +6,21 @@ public struct SideBoxDictionaryView: View {
     let itemSize: CGFloat
     let spaceBetweenItems: CGFloat
     let itemsToShow: CGFloat
-    
-    public init(items: [String : Double], paddingSize: CGFloat = 12, itemSize: CGFloat = 126, spaceBetweenItems: CGFloat = 16, itemsToShow: CGFloat = 3) {
+
+    public init(
+        items: [String: Double],
+        paddingSize: CGFloat = 12,
+        itemSize: CGFloat = 126,
+        spaceBetweenItems: CGFloat = 16,
+        itemsToShow: CGFloat = 3
+    ) {
         self.items = items
         self.paddingSize = paddingSize
         self.itemSize = itemSize
         self.spaceBetweenItems = spaceBetweenItems
         self.itemsToShow = itemsToShow
     }
- 
+
     public var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             ScrollViewReader { value in
@@ -34,7 +40,7 @@ public struct SideBoxDictionaryView: View {
         .offset(x: calculatedPadding)
         .padding(.vertical)
     }
-    
+
     var calculatedPadding: CGFloat {
         UIScreen.main.bounds.size.width
         - ((itemsToShow - 1) * spaceBetweenItems)

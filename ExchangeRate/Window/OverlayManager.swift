@@ -1,23 +1,33 @@
 import UIKit
 
 public protocol OverlayManagerProtocol {
-    func asyncRequestWithLoading<T>(request: @autoclosure () async throws -> T, onLoaded action: @escaping (T) -> Void) async
+    func asyncRequestWithLoading<T>(
+        request: @autoclosure () async throws -> T,
+        onLoaded action: @escaping (T) -> Void
+    ) async
 }
 
 public class OverlayManager: OverlayManagerProtocol {
     private let loadingHandler: LoadingHandler
     private let alertHandler: AlertHandler
-    
+
     public init(appDependency: AppDependency) {
         self.loadingHandler = appDependency.makeLoadingHandler()
         self.alertHandler = appDependency.makeAlertHandler()
     }
 
-    public func asyncRequestWithLoading<T>(request: () async throws -> T, onLoaded action: @escaping (T) -> Void) async {
+    public func asyncRequestWithLoading<T>(
+        request: () async throws -> T,
+        onLoaded action: @escaping (T) -> Void
+    ) async {
         await executeLoading(request: request, onLoaded: action)
     }
 
-    func executeLoading<T>(request: () async throws -> T, onLoaded action: @escaping (T) -> Void, onCatch: ((Error) -> Void)? = nil) async {
+    func executeLoading<T>(
+        request: () async throws -> T,
+        onLoaded action: @escaping (T) -> Void,
+        onCatch: ((Error) -> Void)? = nil
+    ) async {
         DispatchQueue.main.async { [weak self] in
             self?.loadingHandler.showLoading()
         }

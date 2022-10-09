@@ -7,7 +7,7 @@ public struct InfoItemView: View {
     public var cornerRadius: CGFloat
     public var renderMode: Image.TemplateRenderingMode
     public var didFinish: (() -> Void)?
-    
+
     public init(
         title: String? = nil,
         message: String? = nil,
@@ -21,7 +21,7 @@ public struct InfoItemView: View {
         self.renderMode = renderMode
         self.didFinish = didFinish
     }
-    
+
     public var body: some View {
         HStack(alignment: .top, spacing: 20) {
             VStack(alignment: .leading) {

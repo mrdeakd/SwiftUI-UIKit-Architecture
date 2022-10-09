@@ -5,14 +5,14 @@ public struct CurrencyRowItemView: View {
     let subText: String
     let subSubText: String?
     let iconName: String
-    
+
     public init(title: String, subText: String, subSubText: String? = nil, iconName: String) {
         self.title = title
         self.subText = subText
         self.subSubText = subSubText
         self.iconName = iconName
     }
-    
+
     public var body: some View {
         ZStack {
             Color.white

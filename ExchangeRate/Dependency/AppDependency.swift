@@ -21,7 +21,7 @@ public class AppDependency: AppDependencyProtocol {
     public func makeLoadingHandler() -> LoadingHandler {
         loadingHandler
     }
-    
+
     public func makeAlertHandler() -> AlertHandler {
         alertHandler
     }
