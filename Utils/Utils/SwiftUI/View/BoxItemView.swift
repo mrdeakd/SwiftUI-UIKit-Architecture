@@ -5,14 +5,14 @@ public struct BoxItemView: View {
     let subText: String
     let subSubText: String?
     let itemSize: CGFloat
-    
+
     public init(title: String, subText: String, subSubText: String? = nil, itemSize: CGFloat) {
         self.title = title
         self.subText = subText
         self.subSubText = subSubText
         self.itemSize = itemSize
     }
-    
+
     public var body: some View {
         ZStack {
             Color.white

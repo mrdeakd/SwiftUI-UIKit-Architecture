@@ -1,5 +1,6 @@
 import SwiftUI
 
+// swiftlint:disable function_body_length
 public struct BottomView: ViewModifier {
     private let bottomViewHeight: CGFloat = 616
     private let baseOffsetY: CGFloat = UIScreen.main.bounds.size.height * 5/6
@@ -8,9 +9,9 @@ public struct BottomView: ViewModifier {
     @State private var offsetY: CGFloat = .zero
     @State private var fixedOffsetY: CGFloat = .zero
     @State private var opened: Bool = false
-    
+
     private let viewToShow: AnyView
-    
+
     public init(viewToShow: AnyView) {
         self.viewToShow = viewToShow
     }
@@ -29,7 +30,8 @@ public struct BottomView: ViewModifier {
                             .onChanged { value in
                                 withAnimation(.linear) {
                                     if opened {
-                                        if abs(fixedOffsetY) + value.translation.height > bottomViewHeight - baseRestOfOffsetY {
+                                        if abs(fixedOffsetY) + value.translation.height
+                                            > bottomViewHeight - baseRestOfOffsetY {
                                             offsetY = value.translation.height
                                         }
                                     } else {

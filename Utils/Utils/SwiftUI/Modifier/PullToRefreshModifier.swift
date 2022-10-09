@@ -3,10 +3,10 @@ import SwiftUI
 public struct PullToRefreshModifier: ViewModifier {
     @State private var dragAmount = CGFloat.zero
     @State private var maximumOffset: CGFloat = 84
-    
+
     private let backgroundColor: Color
     private let pullAction: (() -> Void)
-    
+
     public init(backgroundColor: Color = .white, pullAction: @escaping (() -> Void)) {
         self.pullAction = pullAction
         self.backgroundColor = backgroundColor

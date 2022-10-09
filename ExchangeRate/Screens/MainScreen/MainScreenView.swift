@@ -1,6 +1,7 @@
 import SwiftUI
 import Utils
 
+// swiftlint:disable line_length
 struct MainScreenView<ViewModel: MainScreenViewModelProtocol>: View {
     @StateObject var viewModel: ViewModel
 
@@ -52,7 +53,3 @@ struct MainScreenView_Previews: PreviewProvider {
         )
     }
 }
-
-
-
-
