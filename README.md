@@ -9,7 +9,8 @@ iOS app with hybrid architecture. It is based on SwiftUI with UIKit ViewControll
 ![](https://github.com/mrdeakd/SwiftUI-UIKit-Architecture/blob/main/gifs/in_app_5.gif)
 ![](https://github.com/mrdeakd/SwiftUI-UIKit-Architecture/blob/main/gifs/in_app_6.gif)
 
-Other included dependencies:
+Other dependencies:
   - R.swift
   - SwiftyMocky
   - SwiftLint
+  - xUnique
