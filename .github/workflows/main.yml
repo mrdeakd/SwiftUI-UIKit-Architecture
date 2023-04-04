@@ -28,7 +28,7 @@ jobs:
           restore-keys: ${{ runner.os }}-deps-v1-
  
       - name: Select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_13.0.app && /usr/bin/xcodebuild -version
+        run: sudo xcode-select -switch /Applications/Xcode_14.0.app && /usr/bin/xcodebuild -version
 
       - name: Run tests
-        run: xcodebuild test -scheme ExchangeRate -project ExchangeRate.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.0' | xcpretty && exit ${PIPESTATUS[0]}
+        run: xcodebuild test -workspace ExchangeRate.xcworkspace -scheme ExchangeRate -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
