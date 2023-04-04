@@ -32,4 +32,4 @@ jobs:
           xcode-version: latest-stable
 
       - name: Run tests
-        run: xcodebuild test -workspace ExchangeRate.xcworkspace -scheme ExchangeRate -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
+        run: xcodebuild test -workspace ExchangeRate.xcworkspace -scheme ExchangeRate -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.2'
