@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: macos-11
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
 
@@ -27,8 +27,9 @@ jobs:
           key: ${{ runner.os }}-deps-v1-${{ hashFiles('BILDsolid.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
           restore-keys: ${{ runner.os }}-deps-v1-
  
-      - name: Select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_14.0.app && /usr/bin/xcodebuild -version
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
 
       - name: Run tests
         run: xcodebuild test -workspace ExchangeRate.xcworkspace -scheme ExchangeRate -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
